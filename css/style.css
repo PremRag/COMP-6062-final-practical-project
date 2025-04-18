@@ -1,18 +1,72 @@
-body {
-  background-color: black;
-  color: white;
-  font-family: "Segoe UI", Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+header{
+    background-color: black;
+    font-size: medium;
+    color: cyan;
+    font-weight: bold;
+    text-shadow: aqua;
 }
 
+footer{
+    background-color: black;
+    font-size: small;
+    color: cyan;
+    font-weight: bold;
+    text-shadow: rgb(255, 255, 255);
+}
 
+body {
+    background-color: #FF4655;
+    font-family: "Segoe UI", sans-serif;
+}
 
-h1 {
-    font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 56px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-    margin: 0;
-  }
+#app {
+    max-width: 100%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.profile{
+    text-align: center;
+    align-content: center;
+}
+
+.weather {
+    background: #ffffff;
+}
+
+.input_field{
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid #0a84ff;
+    color: #0a84ff;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 25px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-family: "Segoe UI", sans-serif;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0a84ff;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: #e3f2fd;
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+}

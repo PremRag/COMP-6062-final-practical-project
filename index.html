@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>1198030</title>
+    <title>Final Project</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>PremRag-1198030</h1>
     </header>
-    <main>
-         
+    <main id="app">
+        <!-- I used bootstrap 5 method to propely display all div. -->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="profile col-md-6 border-end"> <!-- boarder-end is a clear way to differentiate between two Div's i researched and got to know about it  -->
+                    <div><img :src="user.profile_picture" alt="Profile Picture" class="rounded-circle" width="100" height="100"></div>
+                    <div><strong>{{ user.first_name }} {{ user.last_name }} -</strong><small>{{ user.age }}</small></div>
+                    <div><button class="button" @click="newUser">New Profile</button></div>
+                </div>
+                <div class="weather col-md-6">
+                    <h2>Weather Report</h2>
+                    <div v-if="weather"  class="row">
+                        <div class="col-md-6 border-end">
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/869/869869.png" width="18"> <strong>Temperature:</strong> {{ weather.temperature }}</p>
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/2312/2312841.png" width="18"> <strong>Wind:</strong> {{ weather.wind_speed }}</p>
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/1163/1163624.png" width="18"> <strong>Description:</strong> {{ weather.weather_description }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/149/149060.png" width="18"> <strong>Location:</strong> {{ weather.location.city }},{{ weather.location.region }},{{ weather.location.country }}</p>
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/535/535239.png" width="18"> <strong>Latitude,Longitude:</strong> {{ weather.location.latitude }},{{ weather.location.longitude }}</p>
+                            <p><img src="https://cdn-icons-png.flaticon.com/128/2989/2989988.png" width="18"> <strong>Population:</strong> {{ weather.location.population }}</p>
+                        </div>
+                    </div>
+                    <hr>                 
+                    <div class="input_field"><input v-model="city"  type="text" placeholder="City"  class="form-control"></div>
+                    <div class="input_field"><input v-model="province"  type="text" placeholder="Province" class="form-control"></div>
+                    <div class="input_field"><input v-model="country"  type="text" placeholder="Country" class="form-control"></div>
+                    <div><button class="button" @click="getWeather">Weather report</button></div>
+                </div>
+            </div>
+            </div>
     </main>
-    <footer>&copy Prem Rag - 1198030</footer>
+    <footer>&copy; Prem Rag - 1198030</footer>
+    <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>
